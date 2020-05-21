@@ -35,7 +35,6 @@ public class CameraController : MonoBehaviour
         float e = 0.15f;
         if (input.magnitude > e)
         {
-            Debug.Log(input.magnitude);
             orbitAngles += input * cameraRotateSpeed * Time.unscaledDeltaTime;
         }
     }
@@ -49,7 +48,7 @@ public class CameraController : MonoBehaviour
         }
         if (distance > 0.05f && focusRadius>0.05f)
         {
-            focusPoint = Vector3.Lerp(targetPoint, focusPoint, Mathf.Pow(1f - focusCentering, Time.unscaledDeltaTime));
+            focusPoint = Vector3.Lerp(targetPoint, focusPoint, Mathf.Pow(1-focusCentering, Time.unscaledDeltaTime));
         }
     }
 
