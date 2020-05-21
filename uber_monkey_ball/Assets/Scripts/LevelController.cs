@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// PRECONDITIONS:
+//      For levels with nested children objects(almost all levels). A rigidbody with IsKinematic true is required. This ensures the level is "rigid". If this
+//      if not done. Players sprials out of control. It seems the Rigidbody component truely forces the object and its children to be a rigidbody
 public class LevelController : MonoBehaviour
 {
     //Interface
@@ -12,6 +15,12 @@ public class LevelController : MonoBehaviour
     //Protected
     Transform levelTransform;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>() as Rigidbody;
+        rb.isKinematic = true;
+        rb.useGravity = false;
+    }
     void Start()
     {
         levelTransform = transform;
