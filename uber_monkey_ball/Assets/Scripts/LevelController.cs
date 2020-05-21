@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
         levelTransform.SetParent(player);
         player.rotation = Quaternion.Inverse(levelTransform.rotation) * player.rotation;
         player.rotation = offsetRot * player.rotation;
-        player.DetachChildren();
+        levelTransform.parent = null;
         player.rotation = cachedPlayerRot;
     }
     private void LateUpdate()
