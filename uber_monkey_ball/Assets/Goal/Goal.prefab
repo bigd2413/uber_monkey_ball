@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7367081967776956654}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,9 +70,10 @@ GameObject:
   - component: {fileID: 6840345411447303595}
   - component: {fileID: 7758251370715359458}
   - component: {fileID: 8484512550925322079}
+  - component: {fileID: 484905833058815752}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &484905833058815752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912286266992880839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1409ac220a7776942b5d5c5f7f27c441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8525001003241985464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,16 +233,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: goal
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7e27c34bcdbbd764c962fbe0f9ec3471,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     - target: {fileID: -113181020801827196, guid: 7e27c34bcdbbd764c962fbe0f9ec3471,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1e22ab4b069ed10429cdb04bd7e2cd9b, type: 2}
+    - target: {fileID: 2502203975881118265, guid: 7e27c34bcdbbd764c962fbe0f9ec3471,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     - target: {fileID: 3383253211369017260, guid: 7e27c34bcdbbd764c962fbe0f9ec3471,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7858c25b8ae0d7f40857ebba84b3c268, type: 2}
+    - target: {fileID: 5051746840642452563, guid: 7e27c34bcdbbd764c962fbe0f9ec3471,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e27c34bcdbbd764c962fbe0f9ec3471, type: 3}
 --- !u!4 &3689670684059893410 stripped
