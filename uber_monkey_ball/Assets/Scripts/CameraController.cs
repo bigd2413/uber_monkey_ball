@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
     [Tooltip("Yaw rotation angle at which camera will rotate at full speed.")]
     [SerializeField, Range(0f, 90f)]
-    float alignSmoothRange = 45f;
+    float alignSmoothRange = 30f;
 
 
     Vector3 focusPoint, previousFocusPoint;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,20 @@ public class GameManager : MonoBehaviour
     }
     public void ManageGoal()
     {
-
+        StartCoroutine(GoalRoutine());
+    }
+    public void ManageFalloff()
+    {
+        StartCoroutine(FalloffRoutine());
+    }
+    IEnumerator GoalRoutine()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    IEnumerator FalloffRoutine()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

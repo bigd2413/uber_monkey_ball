@@ -11,14 +11,19 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 20f;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Goal"))
         {
             rb.useGravity = false;
             rb.drag = 1f;
             rb.angularDrag = 1f;
-            StartCoroutine(PlayerGoalBehaviour()); 
+            StartCoroutine(PlayerGoalBehaviour());
+            GameManager.Instance.ManageGoal();
+        }
+        if (other.CompareTag("Falloff"))
+        {
+            GameManager.Instance.ManageFalloff();
         }
     }
     IEnumerator PlayerGoalBehaviour()
