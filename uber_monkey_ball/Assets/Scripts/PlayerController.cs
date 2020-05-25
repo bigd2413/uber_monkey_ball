@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void FalloutEventHandler();
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody rb;   
+    public event FalloutEventHandler PlayerFalloutEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Falloff"))
         {
             GameManager.Instance.ManageFalloff();
+            PlayerFalloutEvent?.Invoke();
         }
     }
     IEnumerator PlayerGoalBehaviour()
@@ -36,5 +40,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up*50);
             yield return null;
         }
+
     } 
 }

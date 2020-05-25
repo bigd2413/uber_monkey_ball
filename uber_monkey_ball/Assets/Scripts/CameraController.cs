@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +41,15 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         focusPoint = focus.position;
+        PlayerController pc = focus.GetComponent<PlayerController>();
+        pc.PlayerFalloutEvent += DetachCameraForFallout;
+    }
+
+    public void DetachCameraForFallout()
+    {
+        focusRadius = 40f;
+        focusCentering = 0.999f;
+        return;
     }
 
     // This updates where the camera is looking at
