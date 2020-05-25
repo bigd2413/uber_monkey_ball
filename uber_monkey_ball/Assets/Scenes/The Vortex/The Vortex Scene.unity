@@ -412,7 +412,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c532bbae5fb20b94aaffdcf3c1ae5f9d, type: 2}
+      objectReference: {fileID: 2100000, guid: 32d6da5169eb4644a964a1fcef4d1628, type: 2}
     - target: {fileID: -927199367670048503, guid: 079b054ffab626a41a1f70090e981ba7,
         type: 3}
       propertyPath: m_Name
@@ -521,8 +521,8 @@ MonoBehaviour:
   focusRadius: 1
   focusCentering: 0.752
   offset: {x: 0, y: 1, z: 0}
-  cameraRotateSpeed: 250
-  alignSmoothRange: 30
+  cameraRotateSpeed: 483
+  alignSmoothRange: 6.9
   orbitAngles: {x: 30, y: 0}
 --- !u!1 &1245340160 stripped
 GameObject:
