@@ -16,13 +16,19 @@ public class BoneCollectable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Play GetBone animation
-            StartCoroutine(GetBoneRoutine());
+            StartCoroutine(GetBoneRoutine(other.transform));
         }
     }
-    IEnumerator GetBoneRoutine()
+    IEnumerator GetBoneRoutine(Transform player)
     {
         BoneAnimator.SetTrigger("GetBone");
-        yield return new WaitForSeconds(2);
+        float t = 0;
+        while (t < 2)
+        {
+            transform.position = Vector3.Lerp(transform.position, player.position, 0.2f);
+            t += Time.deltaTime;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }
