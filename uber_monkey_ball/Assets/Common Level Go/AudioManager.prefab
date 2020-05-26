@@ -62,3 +62,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
+  - name: GoalSound
+    clip: {fileID: 8300000, guid: 4205c745d1099ad4d85593bd8cd90c2c, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
