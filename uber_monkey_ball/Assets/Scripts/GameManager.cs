@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator FalloffRoutine()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        FindObjectOfType<AudioManager>().Play("PlummetSound");
+
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
