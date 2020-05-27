@@ -51,7 +51,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: PlummetSound
-    clip: {fileID: 8300000, guid: ef997d694ac5d9940b0db182d50f8656, type: 3}
+    clip: {fileID: 8300000, guid: 2a28601901d1d4f43a688dd4ed4cd753, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
@@ -62,3 +62,15 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
+  - name: GoalSound
+    clip: {fileID: 8300000, guid: 4205c745d1099ad4d85593bd8cd90c2c, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Thud
+    clip: {fileID: 8300000, guid: 390062e4e8fcf3049ab22a388bbd88c6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

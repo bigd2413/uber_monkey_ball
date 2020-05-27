@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 
-[System.Serializable]
+[System.Serializable] // This makes it so our parameters will show up in the inspector.
 public class Sound 
 {
     public string name;
@@ -14,7 +14,7 @@ public class Sound
     [Range(0.1f, 3f)]
     public float pitch;
 
-    [HideInInspector]
+    [HideInInspector] // Without this, we could have a bunch of clutter in our inspector.
     public AudioSource source;
 
     public bool loop;

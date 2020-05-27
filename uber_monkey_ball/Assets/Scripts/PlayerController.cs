@@ -6,14 +6,23 @@ using UnityEngine;
 public delegate void FalloutEventHandler();
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;   
+    private bool isGrounded;
+    private bool thud;
+    private float thudCoolDown;
+
+    Rigidbody rb;
+    AudioSource audioSource;
     public event FalloutEventHandler PlayerFalloutEvent;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 20f;
+        audioSource = GetComponent<AudioSource>();
+        thudCoolDown = 0;
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Goal"))
@@ -30,6 +39,70 @@ public class PlayerController : MonoBehaviour
             PlayerFalloutEvent?.Invoke();
         }
     }
+
+    void OnCollisionStay(Collision collision)
+    {
+        isGrounded = true;
+        EvaluateCollision(collision);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    void EvaluateCollision(Collision collision)
+    {
+        float maxDotProduct = -1f; 
+
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            Vector3 normal = collision.GetContact(i).normal;
+
+            float dotProduct = Mathf.Abs(Vector3.Dot(rb.velocity.normalized, normal)*Mathf.Rad2Deg);
+
+            if (dotProduct > maxDotProduct)
+            {
+                maxDotProduct = dotProduct;
+            }
+        }
+
+        if (maxDotProduct > 30f && rb.velocity.magnitude > 5f && thudCoolDown <= 0f)
+            thud = true;
+        else
+            thud = false;
+    }
+
+    private void Update()
+    {
+        if (isGrounded)
+        {
+        if (rb.velocity.magnitude >= 1)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.pitch = 0.15f * rb.velocity.magnitude + 0.3f;
+                audioSource.pitch = Mathf.Clamp(audioSource.pitch, 0.3f, 2f);
+                audioSource.Play();
+            }
+        }
+        else
+            audioSource.Stop();
+        }
+
+        if (thud)
+        {
+            thudCoolDown = 0.8f;
+            FindObjectOfType<AudioManager>().Play("Thud");
+
+        }
+
+        if (thudCoolDown > 0f)
+            thudCoolDown -= Time.deltaTime;
+
+        isGrounded = false;
+    }
+
     IEnumerator PlayerGoalBehaviour()
     {
         float time = 0;

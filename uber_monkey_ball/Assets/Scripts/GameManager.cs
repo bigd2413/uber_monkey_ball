@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator GoalRoutine()
     {
+        FindObjectOfType<AudioManager>().Play("GoalSound");
         yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
