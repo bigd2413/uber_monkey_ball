@@ -7,6 +7,9 @@ public delegate void FalloutEventHandler();
 public class PlayerController : MonoBehaviour
 {
     private bool isGrounded;
+    private bool thud;
+    private float thudCoolDown;
+
     Rigidbody rb;
     AudioSource audioSource;
     public event FalloutEventHandler PlayerFalloutEvent;
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 20f;
         audioSource = GetComponent<AudioSource>();
+        thudCoolDown = 0;
     }
 
     private void OnTriggerExit(Collider other)
@@ -36,9 +40,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionStay()
+    void OnCollisionStay(Collision collision)
     {
         isGrounded = true;
+        EvaluateCollision(collision);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    void EvaluateCollision(Collision collision)
+    {
+        float maxDotProduct = -1f; 
+
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            Vector3 normal = collision.GetContact(i).normal;
+
+            float dotProduct = Mathf.Abs(Vector3.Dot(rb.velocity.normalized, normal)*Mathf.Rad2Deg);
+
+            if (dotProduct > maxDotProduct)
+            {
+                maxDotProduct = dotProduct;
+            }
+        }
+
+        if (maxDotProduct > 30f && rb.velocity.magnitude > 5f && thudCoolDown <= 0f)
+            thud = true;
+        else
+            thud = false;
     }
 
     private void Update()
@@ -58,8 +90,15 @@ public class PlayerController : MonoBehaviour
             audioSource.Stop();
         }
 
+        if (thud)
+        {
+            thudCoolDown = 0.8f;
+            FindObjectOfType<AudioManager>().Play("Thud");
 
+        }
 
+        if (thudCoolDown > 0f)
+            thudCoolDown -= Time.deltaTime;
 
         isGrounded = false;
     }
