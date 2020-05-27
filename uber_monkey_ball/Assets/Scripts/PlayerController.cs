@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         {
             thudCoolDown = 0.8f;
             FindObjectOfType<AudioManager>().Play("Thud");
-
+            thud = false;
         }
 
         if (thudCoolDown > 0f)
