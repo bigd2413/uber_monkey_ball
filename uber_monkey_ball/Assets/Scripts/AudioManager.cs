@@ -54,4 +54,13 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+    public void PlayThud(float collisionForce)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == "Thud");
+        float pitch = 0.125f * collisionForce + 0.2f;
+        pitch = Mathf.Clamp(s.pitch, 0.3f, 200f);
+        s.pitch = pitch;
+        s.source.pitch = pitch;
+        s.source.Play();
+    }
 }

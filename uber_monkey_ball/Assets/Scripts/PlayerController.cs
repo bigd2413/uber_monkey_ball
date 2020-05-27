@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (maxDotProduct > 30f && rb.velocity.magnitude > 5f && thudCoolDown <= 0f)
+        if (maxDotProduct > 30f && rb.velocity.magnitude > 10f && thudCoolDown <= 0f)
             thud = true;
         else
             thud = false;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.pitch = 0.15f * rb.velocity.magnitude + 0.3f;
+                audioSource.pitch = 0.125f * rb.velocity.magnitude + 0.2f;
                 audioSource.pitch = Mathf.Clamp(audioSource.pitch, 0.3f, 2f);
                 audioSource.Play();
             }
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         if (thud)
         {
             thudCoolDown = 0.8f;
-            FindObjectOfType<AudioManager>().Play("Thud");
+            FindObjectOfType<AudioManager>().PlayThud(1000.5f);
             thud = false;
         }
 
