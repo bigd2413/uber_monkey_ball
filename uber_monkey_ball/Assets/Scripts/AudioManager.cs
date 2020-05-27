@@ -10,7 +10,6 @@ public class AudioManager : MonoBehaviour
     // We want one instance of this to carry over to other scenes so music doesn't get interrupted.
     public static AudioManager instance; 
 
-    // Start is called before the first frame update
     void Awake()
     {
         // When entering a new scene, a duplicate AudioManager will not be created.
