@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7492673, g: 0.55887216, b: 0.78428745, a: 1}
+  m_IndirectSpecularColor: {r: 0.74925584, g: 0.5588789, b: 0.7844375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -566,6 +566,91 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.15413415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.83113235
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 4.6233487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].value
+      value: 0.40540504
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 4.6233487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.7320433
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030993803743012, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0.07773548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154030995730721677, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6221862165899052774, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -694,7 +779,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ad543e0828b2a5d4b9b9c5a421f03e61, type: 2}
+      objectReference: {fileID: 2100000, guid: 36126546a3365984ca192e48435b0bd7, type: 2}
     - target: {fileID: -927199367670048503, guid: f6f22740115cab941811c2d9a10c7d0e,
         type: 3}
       propertyPath: m_Name
