@@ -38,7 +38,6 @@ public class SparksController : MonoBehaviour
         {
             foreach (var ps in sparkParticleSystems)
             {
-                Debug.Log("stop");
                 ps.Stop(true,ParticleSystemStopBehavior.StopEmitting);
             }
         }
@@ -46,7 +45,6 @@ public class SparksController : MonoBehaviour
         {
             foreach (var ps in sparkParticleSystems)
             {
-                Debug.Log("Start");
                 ps.Play();
             }
         }
