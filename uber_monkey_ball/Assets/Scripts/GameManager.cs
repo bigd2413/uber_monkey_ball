@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     {
         Timer timerScript = gameManager.GetComponent<Timer>();
         timerScript.TimeoutEvent += LevelRestart;
+
+        PlayerController pc = player.GetComponent<PlayerController>();
+        pc.GoalEvent += ManageGoal;
     }
 
     public void LevelRestart()

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void FalloutEventHandler();
+public delegate void GoalEventHandler();
+
 public class PlayerController : MonoBehaviour
 {
     private bool isGrounded;
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     AudioSource audioSource;
     public event FalloutEventHandler PlayerFalloutEvent;
+    public event GoalEventHandler GoalEvent;
 
 
     // Start is called before the first frame update
@@ -36,7 +39,8 @@ public class PlayerController : MonoBehaviour
             rb.drag = 1f;
             rb.angularDrag = 1f;
             StartCoroutine(FlyAway());
-            GameManager.Instance.ManageGoal();
+            GoalEvent?.Invoke();
+            //GameManager.Instance.ManageGoal();
         }
         if (other.CompareTag("Falloff"))
         {
