@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public Camera mainCamera;
 
+    public Transform gameManager;
+
     // Game Instance Singleton
     public static GameManager Instance
     {
@@ -27,31 +29,53 @@ public class GameManager : MonoBehaviour
         instance = this;
         
     }
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        
+        Timer timerScript = gameManager.GetComponent<Timer>();
+        timerScript.TimeoutEvent += LevelRestart;
+
+        PlayerController pc = player.GetComponent<PlayerController>();
+        pc.GoalEvent += ManageGoal;
     }
+
+    public void LevelRestart()
+    {
+        StartCoroutine(LevelRestartRoutine());
+        return;
+    }
+
     public void ManageGoal()
     {
         StartCoroutine(GoalRoutine());
     }
+
     public void ManageFalloff()
     {
         StartCoroutine(FalloffRoutine());
     }
+
     IEnumerator GoalRoutine()
     {
         FindObjectOfType<AudioManager>().Play("GoalSound");
         yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
     IEnumerator FalloffRoutine()
     {
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
         FindObjectOfType<AudioManager>().Play("PlummetSound");
 
         yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator LevelRestartRoutine()
+    {
+        yield return new WaitForSeconds(2f);
+        FindObjectOfType<AudioManager>().Play("TimeOut");
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

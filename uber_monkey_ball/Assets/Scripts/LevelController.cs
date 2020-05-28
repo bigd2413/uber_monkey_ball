@@ -11,9 +11,13 @@ public class LevelController : MonoBehaviour
     public Transform player;
     public float maxTilt;
     public Transform mainCamera;
+    public bool controlActive;
     
     //Protected
     Transform levelTransform;
+
+    public Transform gameManager;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,29 +28,43 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         levelTransform = transform;
+
+        Timer timerScript = gameManager.GetComponent<Timer>();
+        timerScript.TimeoutEvent += LevelStop;
+        controlActive = true;
     }
 
-    // Update is called once per frame
     Quaternion cachedPlayerRot;
     Vector3 smoothInput;
+    Vector3 input;
     void FixedUpdate()
     {
         cachedPlayerRot = player.rotation;
         player.rotation = Quaternion.identity;
-        Vector3 input = new Vector3(Input.GetAxis("Vertical"),0, -Input.GetAxis("Horizontal"));
+
+        if (controlActive == true)
+        {
+            input = new Vector3(Input.GetAxis("Vertical"),0, - Input.GetAxis("Horizontal"));
+        }
+        else
+        {
+            input = new Vector3 (0,0,0);
+        }
         smoothInput = input / 4 + smoothInput * 3 / 4;
         Vector3 inputCamSpace = mainCamera.TransformDirection(smoothInput);
         Quaternion cameraPitchRot = Quaternion.FromToRotation(mainCamera.up, Vector3.up);
         inputCamSpace = cameraPitchRot * inputCamSpace;
-        Quaternion offsetRot = Quaternion.AngleAxis(smoothInput.magnitude * maxTilt, inputCamSpace);
+        Quaternion offsetRot = Quaternion.AngleAxis(smoothInput.magnitude * maxTilt, inputCamSpace);        
         levelTransform.SetParent(player);
         player.rotation = Quaternion.Inverse(levelTransform.rotation) * player.rotation;
         player.rotation = offsetRot * player.rotation;
         levelTransform.parent = null;
         player.rotation = cachedPlayerRot;
     }
-    private void LateUpdate()
+
+    public void LevelStop()
     {
-       
+        controlActive = false;
+        return;
     }
 }
