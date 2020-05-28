@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool thud;
     private float thudCoolDown;
+    public Transform gameManager;
 
     Rigidbody rb;
     AudioSource audioSource;
     public event FalloutEventHandler PlayerFalloutEvent;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,9 @@ public class PlayerController : MonoBehaviour
         rb.maxAngularVelocity = 20f;
         audioSource = GetComponent<AudioSource>();
         thudCoolDown = 0;
+
+        Timer timerScript = gameManager.GetComponent<Timer>();
+        timerScript.TimeoutEvent += TimeoutProcedure;
     }
 
     private void OnTriggerExit(Collider other)
@@ -30,7 +35,7 @@ public class PlayerController : MonoBehaviour
             rb.useGravity = false;
             rb.drag = 1f;
             rb.angularDrag = 1f;
-            StartCoroutine(PlayerGoalBehaviour());
+            StartCoroutine(FlyAway());
             GameManager.Instance.ManageGoal();
         }
         if (other.CompareTag("Falloff"))
@@ -103,7 +108,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = false;
     }
 
-    IEnumerator PlayerGoalBehaviour()
+    IEnumerator FlyAway()
     {
         float time = 0;
         yield return new WaitForSeconds(2);
@@ -113,6 +118,20 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up*50);
             yield return null;
         }
-
     } 
+
+    public void TimeoutProcedure()
+    {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+
+        rb.useGravity = false;
+        rb.drag = 1f;
+        rb.angularDrag = 1f;
+
+        StartCoroutine(FlyAway());
+
+        return;
+    }
+
+
 }

@@ -34,7 +34,6 @@ public class SkullAnimHook : MonoBehaviour
             float correctionMagnitude = Mathf.Clamp01(-0.5f/maxVelWithControl *Mathf.Max(0,smoothedVelocity.magnitude-maxVelWithControl) + 1);
             // Slerp between no rotation and full corrective rotation
             Quaternion correctionRot = Quaternion.Slerp(Quaternion.identity,Quaternion.FromToRotation(transform.forward,smoothedVelocity),correctionMagnitude);
-            Debug.Log(correctionMagnitude + "/ " + smoothedVelocity.magnitude);
             transform.forward = correctionRot*transform.forward;
             transform.forward = animRotOffset * transform.forward;
         }
