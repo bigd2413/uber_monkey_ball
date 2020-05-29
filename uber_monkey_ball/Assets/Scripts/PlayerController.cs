@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
             if (dotProduct < -0.2f & rb.velocity.magnitude*-1*dotProduct > 5f && thudCoolDown <=0f)
             {
                 thud = true;
-                Debug.Log("THu");
             }
         }
     }

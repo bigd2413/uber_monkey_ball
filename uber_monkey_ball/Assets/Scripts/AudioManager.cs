@@ -59,7 +59,9 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == "Thud");
         float pitch = 0.125f * collisionForce + 0.2f;
         pitch = Mathf.Clamp(s.pitch, 0.3f, 200f);
+        // BUG This is all weird. Any attempt to update the pitch is not registered. 
         s.pitch = pitch;
+        sounds[4].pitch = pitch;
         s.source.pitch = pitch;
         s.source.Play();
     }
