@@ -62,24 +62,18 @@ public class PlayerController : MonoBehaviour
 
     void EvaluateCollision(Collision collision)
     {
-        float maxDotProduct = -1f; 
-
         for (int i = 0; i < collision.contactCount; i++)
         {
             Vector3 normal = collision.GetContact(i).normal;
 
-            float dotProduct = Mathf.Abs(Vector3.Dot(rb.velocity.normalized, normal)*Mathf.Rad2Deg);
+            float dotProduct = Vector3.Dot(rb.velocity.normalized, normal.normalized);
 
-            if (dotProduct > maxDotProduct)
+            if (dotProduct < -0.2f & rb.velocity.magnitude*-1*dotProduct > 5f && thudCoolDown <=0f)
             {
-                maxDotProduct = dotProduct;
+                thud = true;
+                Debug.Log("THu");
             }
         }
-
-        if (maxDotProduct > 30f && rb.velocity.magnitude > 10f && thudCoolDown <= 0f)
-            thud = true;
-        else
-            thud = false;
     }
 
     private void Update()
@@ -101,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
         if (thud)
         {
-            thudCoolDown = 0.8f;
+            thudCoolDown = 0.5f;
             FindObjectOfType<AudioManager>().PlayThud(1000.5f);
             thud = false;
         }
