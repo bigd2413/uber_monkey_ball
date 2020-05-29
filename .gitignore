@@ -14,3 +14,4 @@ uber_monkey_ball/.vs/uber_monkey_ball/v15/Server/sqlite3/storage.ide-wal
 *.ide-shm
 *.ide-wal
 *.db
+*.opendb

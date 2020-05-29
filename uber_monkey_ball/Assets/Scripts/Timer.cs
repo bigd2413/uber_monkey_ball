@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
                 startTime = 30f;
                 break;
             case 5: // Slanted Stairs
-                startTime = 30f;
+                startTime = 40f;
                 break;
             case 6: // Bowl
                 startTime = 100f;
