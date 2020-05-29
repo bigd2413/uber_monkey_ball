@@ -1559,6 +1559,7 @@ GameObject:
   - component: {fileID: 2081382634}
   - component: {fileID: 2081382632}
   - component: {fileID: 2081382631}
+  - component: {fileID: 2081382635}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1651,6 +1652,18 @@ MonoBehaviour:
   cameraRotateSpeed: 296
   alignSmoothRange: 5
   orbitAngles: {x: 30, y: 0}
+--- !u!114 &2081382635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081382630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f9fe54b6a6a7a449b69203f6d17aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2110677381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4706376208126485831, guid: 6a5f6419773fa3f47800def2d8f47866,
