@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private bool isGrounded;
     private bool thud;
+    private float thudForce;
     private float thudCoolDown;
     public Transform gameManager;
 
@@ -68,8 +69,9 @@ public class PlayerController : MonoBehaviour
 
             float dotProduct = Vector3.Dot(rb.velocity.normalized, normal.normalized);
 
-            if (dotProduct < -0.2f & rb.velocity.magnitude*-1*dotProduct > 5f && thudCoolDown <=0f)
+            if (dotProduct < -0.2f && rb.velocity.magnitude * -1 * dotProduct > 5f && thudCoolDown <=0f)
             {
+                thudForce = rb.velocity.magnitude * -1 * dotProduct;
                 thud = true;
             }
         }
@@ -95,7 +97,7 @@ public class PlayerController : MonoBehaviour
         if (thud)
         {
             thudCoolDown = 0.5f;
-            FindObjectOfType<AudioManager>().PlayThud(1000.5f);
+            FindObjectOfType<AudioManager>().PlayThud(thudForce);
             thud = false;
         }
 

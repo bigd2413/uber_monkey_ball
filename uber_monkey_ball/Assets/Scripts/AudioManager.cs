@@ -56,13 +56,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayThud(float collisionForce)
     {
+        // parameterize thud pitch and volume with collision Force
         Sound s = Array.Find(sounds, sound => sound.name == "Thud");
-        float pitch = 0.125f * collisionForce + 0.2f;
-        pitch = Mathf.Clamp(s.pitch, 0.3f, 200f);
-        // BUG This is all weird. Any attempt to update the pitch is not registered. 
-        s.pitch = pitch;
-        sounds[4].pitch = pitch;
-        s.source.pitch = pitch;
+        float pitch = 2 - 0.05f * collisionForce;
+        s.source.pitch = Mathf.Clamp(pitch, 0.7f, 1.5f);
+        s.source.volume = Mathf.Clamp(collisionForce/20, 0.4f, 1f);
+        Debug.Log(s.source.pitch + " " + s.source.volume);
         s.source.Play();
     }
 }
