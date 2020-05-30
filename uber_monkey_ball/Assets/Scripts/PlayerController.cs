@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
             rb.angularDrag = 1f;
             StartCoroutine(FlyAway());
             GoalEvent?.Invoke();
-            //GameManager.Instance.ManageGoal();
         }
         if (other.CompareTag("Falloff"))
         {
