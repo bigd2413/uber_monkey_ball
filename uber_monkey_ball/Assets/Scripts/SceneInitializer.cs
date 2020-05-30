@@ -9,10 +9,7 @@ public class SceneInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("SceneInitializer script executing.");
-
         StartCoroutine(CollectSceneReferences());
-
     }
 
     IEnumerator CollectSceneReferences()

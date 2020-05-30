@@ -30,8 +30,6 @@ public class GameStats : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        Debug.Log("Awake in GameStats is being executed.");
     }
 
     public void InitializeGameStats()
@@ -48,10 +46,6 @@ public class GameStats : MonoBehaviour
         Timer timerScript = gameManager.GetComponent<Timer>();
         timerScript.TimeoutEvent += IncreaseDeathCount;
 
-
-        
-
-        Debug.Log("InitializeGamestats is being executed.");
     }
 
     public void IncreaseDeathCount()
