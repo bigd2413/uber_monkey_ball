@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance = null;
     public Transform player;
     public Camera mainCamera;
+    public bool levelWarpAllowed;
 
     public Transform gameManager;
 
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         instance = this;
-        
+
+        levelWarpAllowed = false;        
     }
 
     private void Start()
@@ -37,6 +39,14 @@ public class GameManager : MonoBehaviour
 
         PlayerController pc = player.GetComponent<PlayerController>();
         pc.GoalEvent += ManageGoal;
+    }
+
+    private void Update()
+    {
+        if (levelWarpAllowed == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void LevelRestart()
@@ -58,8 +68,10 @@ public class GameManager : MonoBehaviour
     IEnumerator GoalRoutine()
     {
         FindObjectOfType<AudioManager>().Play("GoalSound");
-        yield return new WaitForSeconds(3.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        yield return new WaitForSeconds(2.5f);
+
+        levelWarpAllowed = true;
     }
 
     IEnumerator FalloffRoutine()

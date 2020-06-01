@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
             goalMet = true;
             GoalEvent?.Invoke();
         }
+
         if (other.CompareTag("Falloff") && goalMet == false)
         {
             GameManager.Instance.ManageFalloff();

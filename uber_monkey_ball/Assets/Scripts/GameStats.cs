@@ -10,6 +10,9 @@ public class GameStats : MonoBehaviour
     public int levelDeaths;
     public int levelBones;
     public float levelTime;
+    public int boneScore;
+    public int timeScore;
+    public int deathScore;
     public int levelScore;
     public int score;
     public GameObject player;
@@ -17,6 +20,9 @@ public class GameStats : MonoBehaviour
     public GameObject deathTextObject;
     public GameObject boneTextObject;
     public GameObject scoreTextObject;
+    public GameObject levelScoreSummaryTextObject;
+    public GameObject levelTotalScoreTextObject;
+    public GameObject endLevelPanel;
     public Timer timerScript;
 
     // We want one instance of this to carry over to other scenes so music doesn't get interrupted.
@@ -51,6 +57,10 @@ public class GameStats : MonoBehaviour
         boneTextObject.GetComponent<Text>().text = "Bones: " + boneCount.ToString();
         scoreTextObject = GameObject.FindWithTag("ScoreText");
         scoreTextObject.GetComponent<Text>().text = "Score: " + score.ToString("00000");
+        endLevelPanel = GameObject.FindWithTag("EndLevelPanel");
+
+        endLevelPanel.GetComponent<CanvasGroup>().alpha = 0f;
+
 
 
         PlayerController pc = player.GetComponent<PlayerController>();
@@ -59,10 +69,6 @@ public class GameStats : MonoBehaviour
 
         timerScript = gameManager.GetComponent<Timer>();
         timerScript.TimeoutEvent += IncreaseDeathCount;
-
-        levelDeaths = 0;
-        levelBones = 0;
-        //levelScore = 0;
     }
 
     public void IncreaseDeathCount()
@@ -84,8 +90,36 @@ public class GameStats : MonoBehaviour
 
     public void CalculateLevelScore()
     {
-        levelTime = timerScript.time;
-        levelScore = (levelBones * 100) + (int)(levelTime * 10) - (levelDeaths * 100);
+        StartCoroutine(CalcScoreRoutine());
+    }
+
+    IEnumerator CalcScoreRoutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        levelTime = (Mathf.Round(timerScript.time * 10))/10;
+
+        boneScore = levelBones * 100;
+        timeScore = (int) (levelTime * 10);
+        deathScore = levelDeaths * -100;
+        levelScore = boneScore + timeScore + deathScore;
         score = score + levelScore;
+
+        levelScoreSummaryTextObject = GameObject.FindWithTag("LevelTotalScoreSummaryText");
+        levelScoreSummaryTextObject.GetComponent<Text>().text = "Bones Collected: " + levelBones.ToString("0") + " = "
+                                                                + boneScore.ToString("00000") + " points\n" +
+                                                                "Time Left: " + levelTime.ToString("0.0") + " = "
+                                                                + timeScore.ToString("00000") + " points\n" +
+                                                                "Deaths: " + levelDeaths.ToString("0") + " = "
+                                                                + deathScore.ToString("00000") + " points\n" +
+                                                                "Level Score: " + levelScore.ToString("00000") + " points";
+
+        levelTotalScoreTextObject = GameObject.FindWithTag("LevelTotalScoreText");
+        levelTotalScoreTextObject.GetComponent<Text>().text = "Total Score: " + score.ToString("00000");
+
+        endLevelPanel.GetComponent<CanvasGroup>().alpha = 1f;
+
+        levelDeaths = 0;
+        levelBones = 0;
     }
 }

@@ -11,6 +11,9 @@ TagManager:
   - BoneText
   - ScoreText
   - MultiBone
+  - LevelTotalScoreText
+  - LevelTotalScoreSummaryText
+  - EndLevelPanel
   layers:
   - Default
   - TransparentFX
