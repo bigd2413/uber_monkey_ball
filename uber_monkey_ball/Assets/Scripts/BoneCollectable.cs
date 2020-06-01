@@ -29,7 +29,16 @@ public class BoneCollectable : MonoBehaviour
     {
         audioSource.Play();
         BoneAnimator.SetTrigger("GetBone");
-        gameStats.IncreaseBoneCount();
+
+        if (gameObject.tag == "MultiBone")
+        {
+            gameStats.IncreaseBoneCount(3);
+        }
+        else
+        {
+            gameStats.IncreaseBoneCount(1);
+        }
+
         float t = 0;
         while (t < 2)
         {

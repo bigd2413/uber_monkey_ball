@@ -75,10 +75,10 @@ public class GameStats : MonoBehaviour
         levelBones = 0;
     }
 
-    public void IncreaseBoneCount()
+    public void IncreaseBoneCount(int numBones)
     {
-        boneCount++;
-        levelBones++;
+        boneCount = boneCount + numBones;
+        levelBones = levelBones + numBones;
         boneTextObject.GetComponent<Text>().text = "Bones: " + boneCount.ToString(); 
     }
 

@@ -172,8 +172,8 @@ GameObject:
   - component: {fileID: 3670729692032485768}
   - component: {fileID: 4920532255560976140}
   m_Layer: 0
-  m_Name: MultiBOneCollectable
-  m_TagString: Untagged
+  m_Name: MultiBoneCollectable
+  m_TagString: MultiBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  gameStats: {fileID: 0}
 --- !u!136 &3670729692032485768
 CapsuleCollider:
   m_ObjectHideFlags: 0
