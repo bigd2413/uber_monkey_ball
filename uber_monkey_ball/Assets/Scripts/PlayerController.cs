@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private bool isGrounded;
     private bool thud;
+    public bool goalMet;
     private float thudForce;
     private float thudCoolDown;
     public Transform gameManager;
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        goalMet = false;
+
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 20f;
         audioSource = GetComponent<AudioSource>();
@@ -40,9 +43,10 @@ public class PlayerController : MonoBehaviour
             rb.drag = 1f;
             rb.angularDrag = 1f;
             StartCoroutine(FlyAway());
+            goalMet = true;
             GoalEvent?.Invoke();
         }
-        if (other.CompareTag("Falloff"))
+        if (other.CompareTag("Falloff") && goalMet == false)
         {
             GameManager.Instance.ManageFalloff();
             PlayerFalloutEvent?.Invoke();
