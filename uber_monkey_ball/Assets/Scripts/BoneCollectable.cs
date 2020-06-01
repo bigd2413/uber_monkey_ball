@@ -6,11 +6,15 @@ public class BoneCollectable : MonoBehaviour
 {
     public AudioSource audioSource;
     Animator BoneAnimator;
+    public GameStats gameStats;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         BoneAnimator = GetComponent<Animator>();
+
+        StartCoroutine(FindGameStats());
     }
     
     private void OnTriggerEnter(Collider other)
@@ -25,6 +29,7 @@ public class BoneCollectable : MonoBehaviour
     {
         audioSource.Play();
         BoneAnimator.SetTrigger("GetBone");
+        gameStats.IncreaseBoneCount();
         float t = 0;
         while (t < 2)
         {
@@ -33,5 +38,11 @@ public class BoneCollectable : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+    }
+
+    IEnumerator FindGameStats()
+    {
+        yield return new WaitForEndOfFrame();
+        gameStats = FindObjectOfType<GameStats>();
     }
 }

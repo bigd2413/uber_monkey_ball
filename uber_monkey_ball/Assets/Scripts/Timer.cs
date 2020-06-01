@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 {
     public Text timerText;
     private float startTime;
-    private float time;
+    public float time;
     private bool timeOut;
     private bool stopTimer;
     public event TimeoutEventHandler TimeoutEvent;

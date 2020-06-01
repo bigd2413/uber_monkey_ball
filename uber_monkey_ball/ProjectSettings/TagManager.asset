@@ -8,6 +8,8 @@ TagManager:
   - Falloff
   - GameManager
   - DeathText
+  - BoneText
+  - ScoreText
   layers:
   - Default
   - TransparentFX
