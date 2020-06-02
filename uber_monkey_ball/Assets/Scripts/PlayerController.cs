@@ -103,9 +103,8 @@ public class PlayerController : MonoBehaviour
         {
             thudCoolDown = 0.5f;
             FindObjectOfType<AudioManager>().PlayThud(thudForce);
-            //CameraShaker.Instance.ShakeOnce(0.2f, 1, .1f, .5f);
             //CameraShaker.Instance.ShakeOnce(0.5f, 1, .1f, 1f);
-            //CameraShaker.Instance.ShakeOnce(1, 1, .1f, 1.2f);
+            CameraShaker.Instance.ShakeOnce(thudForce/16, 1, .1f, thudForce/14);
             thud = false;
         }
 

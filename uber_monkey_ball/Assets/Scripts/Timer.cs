@@ -26,25 +26,27 @@ public class Timer : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         switch (sceneIndex)
         {
-            case 0: // Overturn
+            case 0: // Start
+                break;
+            case 1: // Overturn
                 startTime = 30f;
                 break;
-            case 1: // Vortex
+            case 2: // Vortex
                 startTime = 60f;
                 break;
-            case 2: // Sticks
+            case 3: // Sticks
                 startTime = 90f;
                 break;
-            case 3: // Hairpin
+            case 4: // Hairpin
                 startTime = 60f;
                 break;
-            case 4: // Slide
+            case 5: // Slide
                 startTime = 30f;
                 break;
-            case 5: // Slanted Stairs
+            case 6: // Slanted Stairs
                 startTime = 40f;
                 break;
-            case 6: // Bowl
+            case 7: // Bowl
                 startTime = 100f;
                 break;
         }
