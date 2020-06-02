@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     private static GameManager instance = null;
     public Transform player;
     public Camera mainCamera;
@@ -16,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public GameStats gameStats;
 
+    public int sceneCount;
+
     // Game Instance Singleton
     public static GameManager Instance
     {
@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        sceneCount = SceneManager.sceneCountInBuildSettings;
+
         // if the singleton is not yet instantiated
         if (instance != null && instance != this)
         {
@@ -45,13 +47,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Warp to next level on input
         if (levelWarpAllowed == true && Input.GetButtonDown("Fire1"))
         {
-            if (SceneManager.GetActiveScene().buildIndex < 6)
+            if (SceneManager.GetActiveScene().buildIndex < sceneCount - 1)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            else
+            else // If last level, just show high score instead
             {
                 gameStats = FindObjectOfType<GameStats>();
                 gameStats.ShowHighScore();
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.5f);
 
+        // Bool added so that the next level doesn't get warped to after a set amount of time,
+        // but so that you can trigger next scene on an input detected in Update()
         levelWarpAllowed = true;
     }
 
