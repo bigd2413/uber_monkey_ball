@@ -7,6 +7,7 @@ public class BoneCollectable : MonoBehaviour
     public AudioSource audioSource;
     Animator BoneAnimator;
     public GameStats gameStats;
+    bool isPickedUp = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,10 @@ public class BoneCollectable : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isPickedUp)
         {
             // Play GetBone animation
+            isPickedUp = true;
             StartCoroutine(GetBoneRoutine(other.transform));
         }
     }
