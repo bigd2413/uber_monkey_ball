@@ -27,6 +27,7 @@ public class GameStats : MonoBehaviour
     public GameObject highScoreTextObject;
     public GameObject yourScoreTextObject;
     public Timer timerScript;
+    private bool highScoreShown;
 
     // We want one instance of this to carry over to other scenes so music doesn't get interrupted.
     public static GameStats instance;
@@ -52,6 +53,8 @@ public class GameStats : MonoBehaviour
 
     public void InitializeGameStats()
     {
+        highScoreShown = false;
+
         player = GameObject.FindWithTag("Player");
         gameManager = GameObject.FindWithTag("GameManager");
         deathTextObject = GameObject.FindWithTag("DeathText");
@@ -129,18 +132,31 @@ public class GameStats : MonoBehaviour
 
     public void ShowHighScore()
     {
-        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        if (highScoreShown == false)
         {
-            PlayerPrefs.SetInt("HighScore", score);
+            highScorePanel = GameObject.FindWithTag("HighScorePanel");
+            highScoreTextObject = GameObject.FindWithTag("HighScoreText");
+            yourScoreTextObject = GameObject.FindWithTag("YourScoreText");
+
+            if (score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                int oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
+                PlayerPrefs.SetInt("HighScore", score);
+
+                highScoreTextObject.GetComponent<Text>().text = "Old High Score: " + oldHighScore.ToString("00000") + "\n" +
+                                                                "New High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString("00000") + "!";
+                highScoreShown = true;
+            }
+            else
+            {
+                highScoreTextObject.GetComponent<Text>().text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString("00000");
+                highScoreShown = true;
+            }
+
+            yourScoreTextObject.GetComponent<Text>().text = "Your Score: " + score.ToString("00000");
+
+            endLevelPanel.GetComponent<CanvasGroup>().alpha = 0f;
+            highScorePanel.GetComponent<CanvasGroup>().alpha = 1f;
         }
-
-        highScorePanel = GameObject.FindWithTag("HighScorePanel");
-        highScoreTextObject = GameObject.FindWithTag("HighScoreText");
-        yourScoreTextObject = GameObject.FindWithTag("YourScoreText");
-        highScoreTextObject.GetComponent<Text>().text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString("00000");
-        yourScoreTextObject.GetComponent<Text>().text = "Your Score: " + score.ToString("00000");
-
-        endLevelPanel.GetComponent<CanvasGroup>().alpha = 0f;
-        highScorePanel.GetComponent<CanvasGroup>().alpha = 1f;
     }
 }
