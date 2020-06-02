@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public delegate void FalloutEventHandler();
 public delegate void GoalEventHandler();
@@ -102,6 +103,9 @@ public class PlayerController : MonoBehaviour
         {
             thudCoolDown = 0.5f;
             FindObjectOfType<AudioManager>().PlayThud(thudForce);
+            //CameraShaker.Instance.ShakeOnce(0.2f, 1, .1f, .5f);
+            //CameraShaker.Instance.ShakeOnce(0.5f, 1, .1f, 1f);
+            //CameraShaker.Instance.ShakeOnce(1, 1, .1f, 1.2f);
             thud = false;
         }
 

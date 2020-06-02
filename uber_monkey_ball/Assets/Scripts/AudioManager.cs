@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
         float pitch = 2 - 0.05f * collisionForce;
         s.source.pitch = Mathf.Clamp(pitch, 0.7f, 1.5f);
         s.source.volume = Mathf.Clamp(collisionForce/20, 0.4f, 1f);
-        Debug.Log(s.source.pitch + " " + s.source.volume);
+        //Debug.Log(s.source.pitch + " " + s.source.volume);
         s.source.Play();
     }
 }
