@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public Transform gameManager;
 
+    public GameStats gameStats;
+
     // Game Instance Singleton
     public static GameManager Instance
     {
@@ -45,7 +47,15 @@ public class GameManager : MonoBehaviour
     {
         if (levelWarpAllowed == true && Input.GetButtonDown("Fire1"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (SceneManager.GetActiveScene().buildIndex < 6)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                gameStats = FindObjectOfType<GameStats>();
+                gameStats.ShowHighScore();
+            }
         }
     }
 
