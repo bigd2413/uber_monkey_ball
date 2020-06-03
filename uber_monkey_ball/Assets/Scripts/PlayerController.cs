@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Goal"))
+        if (other.CompareTag("Goal") && !goalMet)
         {
             rb.useGravity = false;
             rb.drag = 1f;
