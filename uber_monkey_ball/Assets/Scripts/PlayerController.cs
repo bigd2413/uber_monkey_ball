@@ -10,6 +10,7 @@ public delegate void GoalEventHandler();
 public class PlayerController : MonoBehaviour
 {
     private bool isGrounded;
+    private bool isFallOut;
     private bool thud;
     public bool goalMet;
     private float thudForce;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         goalMet = false;
+        isFallOut = false;
 
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 20f;
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
             GoalEvent?.Invoke();
         }
 
-        if (other.CompareTag("Falloff") && goalMet == false)
+        if (other.CompareTag("Falloff") && goalMet == false && !isFallOut)
         {
             GameManager.Instance.ManageFalloff();
             PlayerFalloutEvent?.Invoke();
