@@ -31,8 +31,8 @@ public class Timer : MonoBehaviour
             case 1: // Overturn
                 startTime = 30f;
                 break;
-            case 2: // Vortex
-                startTime = 60f;
+            case 2: // Ramps
+                startTime = 45f;
                 break;
             case 3: // Sticks
                 startTime = 90f;
@@ -48,6 +48,9 @@ public class Timer : MonoBehaviour
                 break;
             case 7: // Bowl
                 startTime = 100f;
+                break;
+            case 8: // Airplanes
+                startTime = 45f;
                 break;
         }
 
