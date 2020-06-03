@@ -31,19 +31,19 @@ public class Timer : MonoBehaviour
             case 1: // Overturn
                 startTime = 30f;
                 break;
-            case 2: // Ramps
-                startTime = 45f;
-                break;
-            case 3: // Sticks
+            case 2: // Sticks
                 startTime = 90f;
                 break;
-            case 4: // Hairpin
-                startTime = 60f;
+            case 3: // Hairpin
+                startTime = 40f;
                 break;
-            case 5: // Slide
+            case 4: // Slide
                 startTime = 30f;
                 break;
-            case 6: // Slanted Stairs
+            case 5: // Slanted Stairs
+                startTime = 40f;
+                break;
+            case 6: // Ramps
                 startTime = 40f;
                 break;
             case 7: // Bowl

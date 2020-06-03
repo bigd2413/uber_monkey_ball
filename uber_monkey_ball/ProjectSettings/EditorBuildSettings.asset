@@ -12,20 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/1 - The Overturn/The Overturn.unity
     guid: 7aa0d4632ddea7b43b2bed3af80eb656
   - enabled: 1
-    path: Assets/Scenes/2 - Ramps/Ramps.unity
-    guid: f1059cfe51feefa4fa584a0a20b4952f
-  - enabled: 1
-    path: Assets/Scenes/3 - Sticks/Sticks.unity
+    path: Assets/Scenes/2 - Sticks/Sticks.unity
     guid: 316165faa5c2c7c44b05d7e1b853e29b
   - enabled: 1
-    path: Assets/Scenes/4 - The Hairpin/The Hairpin.unity
+    path: Assets/Scenes/3 - The Hairpin/The Hairpin.unity
     guid: 8dfbcf63caafa7747acf8e046a4643a1
   - enabled: 1
-    path: Assets/Scenes/5 - The Slide/The Slide.unity
+    path: Assets/Scenes/4 - The Slide/The Slide.unity
     guid: 945c825b88e32774a9dcb419b837fec3
   - enabled: 1
-    path: Assets/Scenes/6 - The Slanted Stairs/The Slanted Stairs.unity
+    path: Assets/Scenes/5 - The Slanted Stairs/The Slanted Stairs.unity
     guid: 740f2980e60840647a60ec2c6e25ce7d
+  - enabled: 1
+    path: Assets/Scenes/6 - Ramps/Ramps.unity
+    guid: f1059cfe51feefa4fa584a0a20b4952f
   - enabled: 1
     path: Assets/Scenes/7 - The Bowl/The Bowl Scene.unity
     guid: 093a3676ff1498e428aa20854a9ee85c
