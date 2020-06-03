@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
     {
         PlayerController pc = player.GetComponent<PlayerController>();
         pc.GoalEvent += TimeStop;
+        pc.PlayerFalloutEvent += TimeStop;
 
         // Change the timer length based on the level
         sceneIndex = SceneManager.GetActiveScene().buildIndex;

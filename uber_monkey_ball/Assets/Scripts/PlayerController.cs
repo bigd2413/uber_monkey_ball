@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.ManageFalloff();
             PlayerFalloutEvent?.Invoke();
+            isFallOut = true;
         }
     }
 
