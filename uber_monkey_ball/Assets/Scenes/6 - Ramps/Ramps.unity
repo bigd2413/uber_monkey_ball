@@ -1367,6 +1367,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 1195392705313848302, guid: 116451ab5f55c4846acbd71f296f3255,
+        type: 3}
+      propertyPath: far clip plane
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116451ab5f55c4846acbd71f296f3255, type: 3}
 --- !u!1 &1416065712
@@ -1555,6 +1560,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512526212}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1858152295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1195392704901125381, guid: 116451ab5f55c4846acbd71f296f3255,
+    type: 3}
+  m_PrefabInstance: {fileID: 1350582639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858152296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858152295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fca14053964a24589667afabeb168a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  lookTarget: {fileID: 761251619}
+  offsetY_Rot: 0
+  radius_max: 280
+  max_degrees_turned: 360
+  height: 20
 --- !u!1001 &1890819460
 PrefabInstance:
   m_ObjectHideFlags: 0
