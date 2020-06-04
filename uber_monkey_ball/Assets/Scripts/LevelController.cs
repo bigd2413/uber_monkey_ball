@@ -67,4 +67,9 @@ public class LevelController : MonoBehaviour
         controlActive = false;
         return;
     }
+    public void LevelStart()
+    {
+        controlActive = true;
+        return;
+    }
 }

@@ -19,6 +19,7 @@ public class CameraSpiral : MonoBehaviour
         spiral = new Spiral(radius_max, max_degrees_turned, height, transform.position, offsetY_Rot) as Spiral;
         time = 0; 
         FindObjectOfType<Timer>().GetComponent<Timer>().TimeStop();
+        FindObjectOfType<LevelController>().GetComponent<LevelController>().LevelStop();
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class CameraSpiral : MonoBehaviour
             GetComponent<CameraController>().enabled = true;
             this.enabled = false;
             FindObjectOfType<Timer>().GetComponent<Timer>().TimeStart();
+            FindObjectOfType<LevelController>().GetComponent<LevelController>().LevelStart();
         }
     }
 }
