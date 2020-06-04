@@ -38,7 +38,7 @@ public class Spiral
     {
         float angle = MaxTheta * t;
         float radius = alpha * Mathf.Pow(beta, angle);
-        return new Vector2(radius * Mathf.Cos(Mathf.Deg2Rad * (angle+OffsetYRot)), radius * Mathf.Sin(Mathf.Deg2Rad * (angle+OffsetYRot)));
+        return new Vector2(radius * Mathf.Cos(Mathf.Deg2Rad * (angle)), radius * Mathf.Sin(Mathf.Deg2Rad * (angle)));
     }
    
 

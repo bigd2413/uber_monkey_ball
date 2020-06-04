@@ -83,4 +83,8 @@ public class Timer : MonoBehaviour
     {
         stopTimer = true;
     }
+    public void TimeStart()
+    {
+        stopTimer = false;
+    }
 }

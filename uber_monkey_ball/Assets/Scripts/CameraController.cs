@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
         LateUpdate();
 
         //Turn on spiral swoop camera
-        if (transform.GetComponent<CameraSpiral>())
+        if (transform.GetComponent<CameraSpiral>() && GameStats.instance.levelDeaths == 0)
         {
             transform.GetComponent<CameraSpiral>().enabled = true;
             transform.GetComponent<CameraController>().enabled = false;
