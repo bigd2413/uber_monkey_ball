@@ -4839,7 +4839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fca14053964a24589667afabeb168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 10
   lookTarget: {fileID: 1560663463}
   offsetY_Rot: 0
   radius_max: 500
