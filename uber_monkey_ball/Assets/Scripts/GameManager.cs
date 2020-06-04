@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public Camera mainCamera;
     public bool levelWarpAllowed;
+    public bool endScreenActive;
 
     public Transform gameManager;
 
@@ -33,7 +34,8 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
 
-        levelWarpAllowed = false;        
+        levelWarpAllowed = false;
+        endScreenActive = false;
     }
 
     private void Start()
@@ -54,10 +56,17 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            else // If last level, just show high score instead
+            else if (!endScreenActive)// If last level, just show high score instead
             {
                 gameStats = FindObjectOfType<GameStats>();
                 gameStats.ShowHighScore();
+                endScreenActive = true;
+            }
+            else // If endscreen panel is showing, user input to restart game
+            {
+                gameStats = FindObjectOfType<GameStats>();
+                gameStats.RestartGame();
+                SceneManager.LoadScene(0);
             }
         }
     }

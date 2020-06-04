@@ -167,4 +167,18 @@ public class GameStats : MonoBehaviour
             highScorePanel.GetComponent<CanvasGroup>().alpha = 1f;
         }
     }
+
+    public void RestartGame()
+    {
+        deathCount = 0;
+        boneCount = 0;
+        levelDeaths = 0;
+        levelBones = 0;
+        levelTime = 0;
+        boneScore = 0;
+        timeScore = 0;
+        deathScore = 0;
+        levelScore = 0;
+        score = 0;
+    }
 }
