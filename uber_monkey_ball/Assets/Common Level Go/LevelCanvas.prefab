@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStats: {fileID: 0}
   levelDeathCount: 0
+  sceneIndex: 0
 --- !u!225 &1789777567
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -620,7 +621,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 300}
+  m_SizeDelta: {x: 800, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7922706066875741730
 CanvasRenderer:
@@ -664,10 +665,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Paused
 
-    Press esc or start to continue
+    Press the return key or start to continue
 
 
-    High Score: 00000'
+    High
+    Score: 00000'
 --- !u!1 &3276125677702748371
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,8 +867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 800, y: 400}
+  m_AnchoredPosition: {x: 0, y: -290}
+  m_SizeDelta: {x: 1000, y: 580}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3052915427077896660
 CanvasRenderer:
@@ -897,10 +899,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -915,21 +917,23 @@ MonoBehaviour:
     level as fast as you can and to collect as many bones as possible.
 
 
-    Controls:
-
     Movement:
     Tilt the level with the wasd keys or control stick to roll your monkey skull!
 
 
     Pause:
-    esc key or start button
+    space key or start button
 
 
-    Press the space key or a button to start
+    Press the escape key at any time to exit
 
 
-    The
-    current high score to beat is xxxxx. Good luck!'
+    Press
+    the space key or a button to start
+
+
+    The current high score to beat is xxxxx.
+    Good luck!'
 --- !u!1 &5627431961812354717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1100,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Game by Duncan Boyes and Brennan Berryman (2020). Idea definitely not stolen
-    from Super Monkey Ball
+    from Super Monkey Ball.
 --- !u!1 &5793738209041718285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1490,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 900, y: 420}
+  m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8300095769924078761
 CanvasRenderer:

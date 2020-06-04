@@ -8,21 +8,26 @@ public class BonusLevel : MonoBehaviour
 {
     public GameStats gameStats;
     public int levelDeathCount;
+    public int sceneIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        StartCoroutine(MaybeShowBonusText());
+
+    }
+    
+    IEnumerator MaybeShowBonusText()
+    {
+        yield return new WaitForEndOfFrame();
         gameStats = FindObjectOfType<GameStats>();
         levelDeathCount = gameStats.levelDeaths;
 
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1 && levelDeathCount == 0)
+        if (sceneIndex == SceneManager.sceneCountInBuildSettings - 1 && levelDeathCount == 0)
         {
             StartCoroutine(ShowBonusText());
         }
-
-
-
     }
 
     IEnumerator ShowBonusText()
@@ -31,11 +36,5 @@ public class BonusLevel : MonoBehaviour
         yield return new WaitForSeconds(5f);
         gameObject.GetComponent<CanvasGroup>().alpha = 0f;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

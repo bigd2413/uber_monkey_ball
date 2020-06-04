@@ -16,12 +16,13 @@ public class StartGame : MonoBehaviour
         startPanel = gameObject;
 
         startText.GetComponent<Text>().text = "Welcome to Uber Monkey Ball!\n\n" +
-                                         "Your goal is to get to the end of each level as fast as can and\n" +
+                                         "Your goal is to get to the end of each level as fast as you can and " +
                                          "to collect as many bones as possible.\n\n" +
                                          "Controls:\n" +
-                                         "Movement: Tilt the level with the WASD keys or control stick to roll\n" +
-                                         "your monkey skull!\n\n" +
-                                         "Pause: ESC key or Start Button\n\n" +
+                                         "Movement: Tilt the level with the WASD keys or control stick to roll " +
+                                         "your monkey skull!\n" +
+                                         "Pause: Return key or Start Button\n" +
+                                         "Press the ESC key at any time to quit\n\n" +
                                          "Press the space key or A Button to start.\n\n" +
                                          "The current high score to beat is " + PlayerPrefs.GetInt("HighScore", 0).ToString() +  ". Good luck!";
 

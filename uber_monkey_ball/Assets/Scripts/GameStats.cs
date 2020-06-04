@@ -69,7 +69,8 @@ public class GameStats : MonoBehaviour
         endLevelPanel = GameObject.FindWithTag("EndLevelPanel");
         pauseTextObject = GameObject.FindWithTag("PauseText");
         pauseTextObject.GetComponent<Text>().text = "Game Paused\n" +
-                                                    "Press ESC or Start to continue\n\n" +
+                                                    "Press Return or Start to continue\n" +
+                                                    "Press ESC to quit\n\n" +
                                                     "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
 
 
