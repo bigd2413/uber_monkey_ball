@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.74925584, g: 0.5588789, b: 0.7844375, a: 1}
+  m_IndirectSpecularColor: {r: 0.7492673, g: 0.55887216, b: 0.78428745, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2017,11 +2017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fca14053964a24589667afabeb168a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 6
+  duration: 5
   lookTarget: {fileID: 1311076694}
   offsetY_Rot: 0
   radius_max: 280
-  max_degrees_turned: 720
+  max_degrees_turned: 360
   height: 20
 --- !u!1001 &2088517494
 PrefabInstance:
