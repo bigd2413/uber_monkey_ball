@@ -280,6 +280,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2757262461131189832, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_Text
+      value: Game by Duncan Boyes and Brennan Berryman (2020). Idea definitely not
+        stolen from Super Monkey Ball.
+      objectReference: {fileID: 0}
     - target: {fileID: 5793738209041718281, guid: bf0db99bb43685e429e2e59675314526,
         type: 3}
       propertyPath: m_LocalPosition.x
