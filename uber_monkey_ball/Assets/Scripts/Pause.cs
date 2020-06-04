@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     public bool gamePaused;
 
+
     void Start()
     {
-        //pausePanel.SetActive(false);
         gamePaused = false;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && SceneManager.GetActiveScene().buildIndex > 0)
         {
             if (gamePaused == false)
             {

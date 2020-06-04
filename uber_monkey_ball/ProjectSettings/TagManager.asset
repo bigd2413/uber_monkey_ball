@@ -17,6 +17,7 @@ TagManager:
   - HighScoreText
   - YourScoreText
   - HighScorePanel
+  - PauseText
   layers:
   - Default
   - TransparentFX

@@ -26,6 +26,9 @@ public class GameStats : MonoBehaviour
     public GameObject highScorePanel;
     public GameObject highScoreTextObject;
     public GameObject yourScoreTextObject;
+    public GameObject pauseTextObject;
+
+
     public Timer timerScript;
     private bool highScoreShown;
 
@@ -64,6 +67,11 @@ public class GameStats : MonoBehaviour
         scoreTextObject = GameObject.FindWithTag("ScoreText");
         scoreTextObject.GetComponent<Text>().text = "Score: " + score.ToString("00000");
         endLevelPanel = GameObject.FindWithTag("EndLevelPanel");
+        pauseTextObject = GameObject.FindWithTag("PauseText");
+        pauseTextObject.GetComponent<Text>().text = "Game Paused\n" +
+                                                    "Press ESC or Start to continue\n\n" +
+                                                    "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+
 
 
         endLevelPanel.GetComponent<CanvasGroup>().alpha = 0f;

@@ -416,8 +416,8 @@ GameObject:
   - component: {fileID: 7922706066875741730}
   - component: {fileID: 318445660499883885}
   m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
+  m_Name: PauseText
+  m_TagString: PauseText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 3052915427077896660}
   - component: {fileID: 2847669785038003016}
   m_Layer: 5
-  m_Name: Text
+  m_Name: StartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,6 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPanel: {fileID: 0}
   gameStarted: 0
+  startText: {fileID: 4955637814827729699}
 --- !u!1 &8901966299658875776
 GameObject:
   m_ObjectHideFlags: 0
