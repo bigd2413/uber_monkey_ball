@@ -12,6 +12,7 @@ public class BonusLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("start");
         gameStats = FindObjectOfType<GameStats>();
         levelDeathCount = gameStats.levelDeaths;
 
