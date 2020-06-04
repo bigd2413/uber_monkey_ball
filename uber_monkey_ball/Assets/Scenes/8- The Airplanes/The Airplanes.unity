@@ -1114,7 +1114,7 @@ PrefabInstance:
     - target: {fileID: 6221862165899052774, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.73
+      value: 15.467
       objectReference: {fileID: 0}
     - target: {fileID: 6221862165899052774, guid: 55e05a1f7c88b8b48834f57e8502c5ea,
         type: 3}
@@ -3045,6 +3045,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960240826}
   m_Mesh: {fileID: -8505782771848123079, guid: f962673b975b8aa4d98e3b44766f418c, type: 3}
+--- !u!1 &1977424396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1195392704901125381, guid: 116451ab5f55c4846acbd71f296f3255,
+    type: 3}
+  m_PrefabInstance: {fileID: 1195392703234071302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977424397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977424396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fca14053964a24589667afabeb168a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  lookTarget: {fileID: 1560663463}
+  offsetY_Rot: 0
+  radius_max: 500
+  max_degrees_turned: 360
+  height: 20
 --- !u!1 &2031759407
 GameObject:
   m_ObjectHideFlags: 0
