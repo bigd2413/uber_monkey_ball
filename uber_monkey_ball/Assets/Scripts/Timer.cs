@@ -51,6 +51,7 @@ public class Timer : MonoBehaviour
                 startTime = 100f;
                 break;
             case 8: // Airplanes
+                Debug.Log("Airplane level time set");
                 startTime = 45f;
                 break;
         }

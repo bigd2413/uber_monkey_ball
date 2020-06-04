@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5398445, g: 0.6167108, b: 0.7465225, a: 1}
+  m_IndirectSpecularColor: {r: 0.5397398, g: 0.61669976, b: 0.7464951, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2398,7 +2398,7 @@ PrefabInstance:
       objectReference: {fileID: 1560663463}
     - target: {fileID: 409837696, guid: 9ada3dd9a7ac53443a0838223f12d9be, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1903348441, guid: 9ada3dd9a7ac53443a0838223f12d9be, type: 3}
       propertyPath: pausePanel
@@ -3456,6 +3456,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1621820835969637692, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Deaths: 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 5793738209041718281, guid: bf0db99bb43685e429e2e59675314526,
         type: 3}
       propertyPath: m_LocalPosition.x
