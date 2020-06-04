@@ -43,6 +43,17 @@ public class CameraController : MonoBehaviour
         focusPoint = focus.position;
         PlayerController pc = focus.GetComponent<PlayerController>();
         pc.PlayerFalloutEvent += DetachCameraForFallout;
+
+        //Do an update to set the camera position
+
+        LateUpdate();
+
+        //Turn on spiral swoop camera
+        if (transform.GetComponent<CameraSpiral>())
+        {
+            transform.GetComponent<CameraSpiral>().enabled = true;
+            transform.GetComponent<CameraController>().enabled = false;
+        }
     }
 
     public void DetachCameraForFallout()
