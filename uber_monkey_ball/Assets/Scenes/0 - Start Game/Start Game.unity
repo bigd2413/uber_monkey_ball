@@ -349,6 +349,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1090596287283480167, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090596287283480167, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757262461131189832, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Game by Duncan Boyes and Brennan Berryman (2020). Guest level designer
+        Daniel Sawkew.
+
+        Idea definitely not stolen from Super Monkey Ball.'
+      objectReference: {fileID: 0}
     - target: {fileID: 5793738209041718281, guid: bf0db99bb43685e429e2e59675314526,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -458,6 +476,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211248706270309615, guid: bf0db99bb43685e429e2e59675314526,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf0db99bb43685e429e2e59675314526, type: 3}
