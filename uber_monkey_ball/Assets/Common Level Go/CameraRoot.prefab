@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 0}
-  orbitDistance: 2.75
-  focusRadius: 1
+  orbitDistance: 3
+  focusRadius: 0.5
   focusCentering: 0.9
   offset: {x: 0, y: 0.8, z: 0}
   cameraRotateSpeed: 300
-  alignSmoothRange: 22.5
+  alignSmoothRange: 1
   orbitAngles: {x: 30, y: 0}
 --- !u!1 &1195392705313848288
 GameObject:

@@ -1162,6 +1162,21 @@ PrefabInstance:
       propertyPath: focus
       value: 
       objectReference: {fileID: 1560663463}
+    - target: {fileID: 1195392704901125379, guid: 116451ab5f55c4846acbd71f296f3255,
+        type: 3}
+      propertyPath: alignSmoothRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195392704901125379, guid: 116451ab5f55c4846acbd71f296f3255,
+        type: 3}
+      propertyPath: focusRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195392704901125379, guid: 116451ab5f55c4846acbd71f296f3255,
+        type: 3}
+      propertyPath: orbitDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1195392704901125381, guid: 116451ab5f55c4846acbd71f296f3255,
         type: 3}
       propertyPath: m_Name
