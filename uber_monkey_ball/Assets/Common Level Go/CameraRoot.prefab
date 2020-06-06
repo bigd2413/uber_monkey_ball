@@ -50,7 +50,7 @@ MonoBehaviour:
   focusCentering: 0.9
   offset: {x: 0, y: 0.8, z: 0}
   cameraRotateSpeed: 300
-  alignSmoothRange: 1
+  alignSmoothRange: 20
   orbitAngles: {x: 30, y: 0}
 --- !u!1 &1195392705313848288
 GameObject:
