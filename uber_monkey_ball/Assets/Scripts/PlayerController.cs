@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.pitch = 0.125f * rb.velocity.magnitude + 0.2f;
+                audioSource.pitch = (0.08f * rb.velocity.magnitude) + 0.2f;
                 audioSource.pitch = Mathf.Clamp(audioSource.pitch, 0.3f, 2f);
                 audioSource.Play();
             }

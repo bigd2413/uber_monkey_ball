@@ -31,7 +31,6 @@ public class CameraSpiral : MonoBehaviour
         transform.LookAt(lookTarget);
         if (t == 0)
         {
-            Debug.Log("done");
             GetComponent<CameraController>().enabled = true;
             this.enabled = false;
             FindObjectOfType<Timer>().GetComponent<Timer>().TimeStart();
