@@ -29,28 +29,31 @@ public class Timer : MonoBehaviour
         {
             case 0: // Start
                 break;
-            case 1: // Overturn
+            case 1: // The Pan
                 startTime = 30f;
                 break;
-            case 2: // Sticks
+            case 2: // Overturn
+                startTime = 30f;
+                break;
+            case 3: // Sticks
                 startTime = 90f;
                 break;
-            case 3: // Hairpin
+            case 4: // Hairpin
                 startTime = 40f;
                 break;
-            case 4: // Slide
+            case 5: // Slide
                 startTime = 30f;
                 break;
-            case 5: // Slanted Stairs
+            case 6: // Slanted Stairs
                 startTime = 40f;
                 break;
-            case 6: // Ramps
+            case 7: // Ramps
                 startTime = 40f;
                 break;
-            case 7: // Bowl
+            case 8: // Bowl
                 startTime = 100f;
                 break;
-            case 8: // Airplanes
+            case 9: // Airplanes
                 Debug.Log("Airplane level time set");
                 startTime = 45f;
                 break;
