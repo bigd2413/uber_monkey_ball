@@ -86,7 +86,7 @@ public class CameraController : MonoBehaviour
 
         // If the movement is too small no rotation happens.
         float movementDeltaSqr = movement.sqrMagnitude;
-        if (movementDeltaSqr < 0.000001f)
+        if (movementDeltaSqr < 0.000000001f)
         {
             return false;
         }
@@ -94,7 +94,7 @@ public class CameraController : MonoBehaviour
 
         float headingAngle = GetAngle(movement / Mathf.Sqrt(movementDeltaSqr)); // Calls GetAngle function to obtain heading 
         float deltaAbs = Mathf.Abs(Mathf.DeltaAngle(orbitAngles.y, headingAngle)); // Difference between current angle and desired        
-        float rotationChange = cameraRotateSpeed * Mathf.Min(Time.unscaledDeltaTime, movementDeltaSqr);
+        float rotationChange = cameraRotateSpeed * Mathf.Min(Time.unscaledDeltaTime, 3*movementDeltaSqr);
 
         // If the difference between heading (desired) angle and current angle is less than alignSmoothRange, our rotation speed will be slower.
         if(deltaAbs < alignSmoothRange)
@@ -104,6 +104,7 @@ public class CameraController : MonoBehaviour
         {
             rotationChange *= (180f - deltaAbs) / alignSmoothRange;
         }
+        Debug.Log(rotationChange);
         orbitAngles.y = Mathf.MoveTowardsAngle(orbitAngles.y, headingAngle, rotationChange);
         return true;
     }
